@@ -28,9 +28,9 @@ class FavoritePresenter(private var favorites: ArrayList<Favorite>,
                 recyclerView.layoutManager = LinearLayoutManager(context)
                 adapter = FavoriteAdapter(context, favorites)
                 recyclerView.adapter = adapter
-                adapter.notifyDataSetChanged()
+//                adapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(context, "Data kosong", Toast.LENGTH_LONG)
+                Toast.makeText(context, "Data kosong", Toast.LENGTH_LONG).show()
             }
         }
     }

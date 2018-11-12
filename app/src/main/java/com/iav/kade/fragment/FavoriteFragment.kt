@@ -32,7 +32,6 @@ class FavoriteFragment : Fragment() {
         val view:View =  inflater.inflate(R.layout.fragment_favorite, container, false)
         rv = view.findViewById<RecyclerView>(R.id.rv)
         swipe = view.findViewById<SwipeRefreshLayout>(R.id.swipe)
-        swipe.isRefreshing = true
         getFavorite()
         return view
     }
@@ -46,10 +45,12 @@ class FavoriteFragment : Fragment() {
         adapter = FavoriteAdapter(activity,favorites)
         presenter = FavoritePresenter(favorites, adapter, rv, activity, swipe)
         presenter.getDatabaseFavorite()
+        adapter.notifyDataSetChanged()
     }
 
     override fun onResume() {
         super.onResume()
         getFavorite()
+        presenter.getDatabaseFavorite()
     }
 }

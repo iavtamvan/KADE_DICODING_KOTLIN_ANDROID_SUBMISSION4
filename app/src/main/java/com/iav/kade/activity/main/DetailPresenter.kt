@@ -1,6 +1,7 @@
 package com.iav.kade.activity.main
 
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteConstraintException
 import android.provider.SyncStateContract.Helpers.insert
 import android.support.v4.content.ContextCompat
@@ -8,22 +9,27 @@ import android.view.Menu
 import android.widget.ImageView
 import android.widget.Toast
 import com.bumptech.glide.Glide
-import com.iav.kade.R
+import com.iav.kade.R.drawable.ic_star_black_24dp
+import com.iav.kade.R.drawable.ic_star_border_black_24dp
 import com.iav.kade.helper.Favorite
 import com.iav.kade.helper.database
 import com.iav.kade.model.Item
 import com.iav.kade.rest.ApiService
 import com.iav.kade.rest.RetroConfig
+import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete
 import org.jetbrains.anko.db.insert
+import org.jetbrains.anko.db.select
+import org.jetbrains.anko.toast
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
+import java.nio.file.Files.delete
 import java.util.*
 
 class DetailPresenter(private var context: Context,
                       private var list: ArrayList<Item> = arrayListOf(),
                       var posisi: Int,
-                      private var nilai: String,
+                      private var nilai: String ,
                       private var menuItem: Menu?,
                       private var items: MutableList<Item> = mutableListOf()) {
 
@@ -55,11 +61,11 @@ class DetailPresenter(private var context: Context,
                         Favorite.TANGGAL to list.get(posisi).dateEvent,
                         Favorite.TEAM_BADGE to "team")
             }
-            Toast.makeText(context, "added to favorite", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Added to favorite", Toast.LENGTH_SHORT).show()
 
             nilai = "favorit"
 
-        } catch (e: SQLiteConstraintException) {
+        } catch (e: SQLiteConstraintException){
             Toast.makeText(context, "" + e.localizedMessage, Toast.LENGTH_SHORT).show()
 
         }
@@ -71,7 +77,7 @@ class DetailPresenter(private var context: Context,
                 delete(Favorite.TABLE_FAVORITE, "(LAGA_ID = {id})",
                         "id" to list.get(posisi).lagaId.toString())
             }
-            Toast.makeText(context, "Remove Favorite", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Remove to favorite", Toast.LENGTH_SHORT).show()
 
             nilai = "not"
         } catch (e: SQLiteConstraintException) {
@@ -81,9 +87,9 @@ class DetailPresenter(private var context: Context,
 
     fun setFavorite(pilihan: String) {
         if (pilihan.equals("not")) {
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(context, R.drawable.ic_star_border_black_24dp)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(context, ic_star_border_black_24dp)
         } else if (pilihan.equals("favorit")) {
-            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(context, R.drawable.ic_star_black_24dp)
+            menuItem?.getItem(0)?.icon = ContextCompat.getDrawable(context, ic_star_black_24dp)
         }
     }
 
@@ -129,5 +135,25 @@ class DetailPresenter(private var context: Context,
                             Toast.makeText(context, "" + error.message, Toast.LENGTH_SHORT).show()
                         }
                 )
+    }
+
+    fun favoriteState(intent: Intent) {
+        list = intent.getParcelableArrayListExtra("list")
+        context.database.use {
+            val result = select(Favorite.TABLE_FAVORITE)
+                    .whereArgs("(LAGA_ID = {id})",
+                            "id" to intent.getStringExtra("id"))
+            val favorite = result.parseList(classParser<Favorite>())
+            if (favorite.size != 0) {
+                nilai = "favorit"
+
+//                setFavorite(nilai)
+            } else {
+                nilai = "not"
+
+//                setFavorite(nilai)
+
+            }
+        }
     }
 }
