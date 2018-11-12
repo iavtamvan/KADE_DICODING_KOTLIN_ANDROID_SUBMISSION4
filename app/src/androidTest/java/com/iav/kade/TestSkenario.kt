@@ -10,7 +10,7 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import com.iav.kade.Activity.HomeActivity
+import com.iav.kade.activity.HomeActivity
 import com.iav.kade.R.id.add_to_favorite
 import com.iav.kade.R.id.fav
 import org.hamcrest.Description

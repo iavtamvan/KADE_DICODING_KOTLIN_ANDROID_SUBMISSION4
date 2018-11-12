@@ -1,4 +1,4 @@
-package com.iav.kade.Model
+package com.iav.kade.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

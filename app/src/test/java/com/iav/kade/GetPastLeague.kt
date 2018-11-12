@@ -1,6 +1,6 @@
 package com.iav.kade
 
-import com.iav.kade.Rest.ApiRepository
+import com.iav.kade.rest.ApiRepository
 import org.junit.Test
 import org.mockito.Mockito
 

@@ -1,4 +1,4 @@
-package com.iav.kade.Rest
+package com.iav.kade.rest
 
 import java.net.URL
 

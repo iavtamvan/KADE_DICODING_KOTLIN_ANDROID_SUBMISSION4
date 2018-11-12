@@ -1,4 +1,4 @@
-package com.iav.kade.Activity
+package com.iav.kade.activity
 
 import android.database.sqlite.SQLiteConstraintException
 import android.os.Bundle
@@ -7,12 +7,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.bumptech.glide.Glide
-import com.iav.kade.Helper.Favorite
-import com.iav.kade.Helper.database
-import com.iav.kade.Model.Item
+import com.iav.kade.helper.Favorite
+import com.iav.kade.helper.database
+import com.iav.kade.model.Item
 import com.iav.kade.R
-import com.iav.kade.Rest.ApiService
-import com.iav.kade.Rest.RetroConfig
+import com.iav.kade.rest.ApiService
+import com.iav.kade.rest.RetroConfig
 import kotlinx.android.synthetic.main.activity_detail_fav.*
 import org.jetbrains.anko.db.classParser
 import org.jetbrains.anko.db.delete

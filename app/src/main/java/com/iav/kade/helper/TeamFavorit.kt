@@ -1,4 +1,4 @@
-package com.iav.kade.Helper
+package com.iav.kade.helper
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

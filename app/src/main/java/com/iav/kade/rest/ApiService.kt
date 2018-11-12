@@ -1,6 +1,6 @@
-package com.iav.kade.Rest
+package com.iav.kade.rest
 
-import com.iav.kade.Model.ResponseModel
+import com.iav.kade.model.ResponseModel
 import retrofit.http.GET
 import retrofit.http.Query
 import rx.Observable

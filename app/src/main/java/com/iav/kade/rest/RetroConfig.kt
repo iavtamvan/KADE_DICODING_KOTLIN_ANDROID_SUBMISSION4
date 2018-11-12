@@ -1,4 +1,4 @@
-package com.iav.kade.Rest
+package com.iav.kade.rest
 
 import com.google.gson.GsonBuilder
 import retrofit.GsonConverterFactory

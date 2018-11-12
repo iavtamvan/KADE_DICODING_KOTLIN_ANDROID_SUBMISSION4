@@ -1,11 +1,11 @@
-package com.iav.kade.Activity
+package com.iav.kade.activity
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import com.iav.kade.Fragment.FavoriteFragment
-import com.iav.kade.Fragment.LastMatchFragment
-import com.iav.kade.Fragment.NextMatchFragment
+import com.iav.kade.fragment.FavoriteFragment
+import com.iav.kade.fragment.LastMatchFragment
+import com.iav.kade.fragment.NextMatchFragment
 import com.iav.kade.R
 import kotlinx.android.synthetic.main.activity_home.*
 

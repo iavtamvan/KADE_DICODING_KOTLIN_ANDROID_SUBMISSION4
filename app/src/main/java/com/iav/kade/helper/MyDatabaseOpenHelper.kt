@@ -1,4 +1,4 @@
-package com.iav.kade.Helper
+package com.iav.kade.helper
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

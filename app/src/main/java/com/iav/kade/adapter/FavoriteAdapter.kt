@@ -1,4 +1,4 @@
-package com.iav.kade.Adapter
+package com.iav.kade.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.iav.kade.Activity.DetailFavActivity
-import com.iav.kade.Helper.Favorite
+import com.iav.kade.activity.DetailFavActivity
+import com.iav.kade.helper.Favorite
 import com.iav.kade.R
 import kotlinx.android.synthetic.main.list_last_match.view.*
 

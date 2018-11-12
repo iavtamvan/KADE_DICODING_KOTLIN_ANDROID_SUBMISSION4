@@ -5,9 +5,9 @@ import android.os.Bundle
 import com.ogaclejapan.smarttablayout.SmartTabLayout
 import android.support.v4.view.ViewPager
 import android.view.View
-import com.iav.kade.Fragment.FavoriteFragment
-import com.iav.kade.Fragment.LastMatchFragment
-import com.iav.kade.Fragment.NextMatchFragment
+import com.iav.kade.fragment.FavoriteFragment
+import com.iav.kade.fragment.LastMatchFragment
+import com.iav.kade.fragment.NextMatchFragment
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 

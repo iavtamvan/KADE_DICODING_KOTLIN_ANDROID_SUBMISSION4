@@ -1,4 +1,4 @@
-package com.iav.kade.Adapter
+package com.iav.kade.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,13 +6,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.iav.kade.Activity.DetailActivity
-import com.iav.kade.Model.Item
+import com.iav.kade.activity.DetailActivity
+import com.iav.kade.model.Item
 import com.iav.kade.R
-import kotlinx.android.synthetic.main.list_last_match.view.*
+import kotlinx.android.synthetic.main.list_next_match.view.*
 
 
-class LastMatchAdapter : RecyclerView.Adapter<LastMatchAdapter.ViewHolder> {
+class NextMatchAdapter : RecyclerView.Adapter<NextMatchAdapter.ViewHolder> {
 
     private lateinit var context: Context
     private var items: ArrayList<Item>? = null
@@ -28,14 +28,13 @@ class LastMatchAdapter : RecyclerView.Adapter<LastMatchAdapter.ViewHolder> {
     constructor()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_last_match, parent, false))
+            ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_next_match, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tanggal.text = items?.get(position)?.dateEvent
-        holder.homeTeam.text = items?.get(position)?.teamHome
-        holder.awayTeam.text = items?.get(position)?.teamAway
-        holder.s_home.text = items?.get(position)?.scoreHome
-        holder.s_away.text = items?.get(position)?.scoreAway
+        holder.tv_event.text = items?.get(position)?.event
+//        holder.s_home.text = items?.get(position)?.scoreHome
+//        holder.s_away.text = items?.get(position)?.scoreAway
 
         holder.itemView.setOnClickListener({
             val intent = Intent(context, DetailActivity::class.java)
@@ -83,10 +82,7 @@ class LastMatchAdapter : RecyclerView.Adapter<LastMatchAdapter.ViewHolder> {
 //    }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tanggal = view.tv_tanggal
-        val homeTeam = view.tv_team_home
-        val awayTeam = view.tv_team_away
-        val s_home = view.tv_score_home
-        val s_away = view.tv_score_away
+        val tanggal = view.tv_tanggal_next
+        val tv_event = view.tv_event
     }
 }

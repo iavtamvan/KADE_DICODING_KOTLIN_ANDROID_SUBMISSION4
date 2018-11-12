@@ -13,9 +13,9 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.iav.kade.MainActivity">
         </activity>
-        <activity android:name="com.iav.kade.Activity.DetailActivity" />
+        <activity android:name="com.iav.kade.activity.DetailActivity" />
         <activity
-            android:name="com.iav.kade.Activity.HomeActivity"
+            android:name="com.iav.kade.activity.HomeActivity"
             android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name="com.iav.kade.Activity.DetailFavActivity"></activity>
+        <activity android:name="com.iav.kade.activity.DetailFavActivity"></activity>
     </application>
 
 </manifest>

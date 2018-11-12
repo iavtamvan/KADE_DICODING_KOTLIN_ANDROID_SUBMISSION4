@@ -1,4 +1,4 @@
-package com.iav.kade.Fragment
+package com.iav.kade.fragment
 
 
 import android.os.Bundle
