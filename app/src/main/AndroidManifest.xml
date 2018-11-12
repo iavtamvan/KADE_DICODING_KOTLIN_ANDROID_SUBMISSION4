@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iav.kade_2">
+    package="com.iav.kade">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,18 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Activity.DetailActivity" />
+        <activity android:name="com.iav.kade.MainActivity">
+        </activity>
+        <activity android:name="com.iav.kade.Activity.DetailActivity" />
         <activity
-            android:name=".Activity.HomeActivity"
+            android:name="com.iav.kade.Activity.HomeActivity"
             android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".Activity.DetailFavActivity"></activity>
+        <activity android:name="com.iav.kade.Activity.DetailFavActivity"></activity>
     </application>
 
 </manifest>

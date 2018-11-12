@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@id/add_to_favorite"
+        android:id="@+id/add_to_favorite"
         android:icon="@drawable/ic_star_black_24dp"
         android:title="fav"
         android:iconifiedByDefault="false"

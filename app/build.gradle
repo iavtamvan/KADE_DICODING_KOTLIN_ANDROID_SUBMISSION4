@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.iav.kade_2"
+        applicationId "com.iav.kade"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
